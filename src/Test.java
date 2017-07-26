@@ -51,19 +51,6 @@ public class Test {
 		//**/
 		
 
-/**		
-		DebitCard d = new DebitCard (12345, 5000);
-			
-		d.withdraw(500);
-		System.out.println ("Print balance: " + d.getBalance());
-		d.withdraw(200);
-		System.out.println ("Print balance: " + d.getBalance());
-		d.deposit(500);
-		System.out.println ("Print balance: " + d.getBalance());
-		System.out.println ();
-
-		d.displayDetails();   
-**/		
 	}
 
 }
