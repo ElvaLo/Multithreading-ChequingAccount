@@ -25,8 +25,10 @@ public class Test {
 	
 		**/
 		
-/*//////////////////////////////////////////////////////////////////////////*/
-		
+	
+
+
+	
 		/**
 		 * This main method tests the inter-thread communication, 
 		 * which allows synchronized methods to communicate with each other
@@ -48,42 +50,7 @@ public class Test {
 		System.out.println("Balance is " + card.getBalance());
 		//**/
 		
-		/*////////////////////////////////////////not in use//////////////////////////////////*/
-		/**	
-		final DebitCard card = new DebitCard(12345, 5000);
-		new Thread(){
-			public void run(){
-				synchronized(this){
-					try{
-						for (int i = 5; i > 0; i--){
-							card.deposit(50);
-							System.out.println("Balance is " + card.getBalance());
-						}
-					}catch (Exception e){
-						System.out.println("Thread interrupted");
-					}
-				}
 
-			}
-		}.start();
-		
-		new Thread(){
-			public void run(){
-				synchronized(this){
-					try{
-						for (int i = 5; i > 0; i--){
-							card.deposit(50);
-							System.out.println("Balance is " + card.getBalance());
-						}
-					}catch (Exception e){
-						System.out.println("Thread interrupted");
-					}
-				}
-
-			}
-		}.start();
-		**/
-		
 /**		
 		DebitCard d = new DebitCard (12345, 5000);
 			
