@@ -21,9 +21,10 @@ public class ThreadDemo extends Thread{
 		//synchronized() here makes the transaction isolated
 		//if synchronized is absent here, thread 1 and tread 2 will compete 
 		synchronized(ts){    
-			ts.transaction1();	                //call the transactiion1 method to mimic a sequent transaction 		
+			ts.transaction1();	                //call the transactiion1 method to mimic a sequential transaction 		
+			System.out.println ("===" + threadName + " exiting" + "===");
 		}		
-		System.out.println ("===" + threadName + " exiting" + "===");
+		
 	}
 	
 	/*start() method overrides the Thread class*/

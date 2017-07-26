@@ -8,14 +8,14 @@
 
 public class Transaction{
 
-	DebitCard card = new DebitCard(12345, 5000);  //initialize a debit card instance
+	public DebitCard card = new DebitCard(12345, 5000);  //initialize a debit card instance
 	
 	/*transation1 method is a sequence of deposit activities
 	 * which used to form concurrent transactions with other thread*/
 	public void transaction1(){
 		try{
 			for (int i = 5; i > 0; i--){
-				card.deposit(50);
+				card.withdraw(500);
 				System.out.println("Balance is " + card.getBalance());
 			}
 		}catch (Exception e){
@@ -34,5 +34,6 @@ public class Transaction{
 			System.out.println("Thread interrupted");
 		}
 	}
+	
 	
 }

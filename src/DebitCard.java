@@ -23,16 +23,28 @@ public class DebitCard {
 	}
 	
 	/*The withdraw method is one of the debit card activity */
-	public void withdraw (double amount){
+	//debit card object requires a lock when calling this method
+	public synchronized void withdraw (double amount){
 		if (balance - amount < 0){                      //check if balance is sufficient
-			System.out.println("Balance Insufficient");			
+			System.out.println("Balance Insufficient; waiting for deposit...");	
+			try{
+				wait();     //cause the current thread to release the lock                            
+			}catch(Exception e){}
 		}
-		else balance = balance - amount;
+		
+			balance = balance - amount;
+			System.out.println("withdraw completed...");
+			//System.out.println("Balance is " + this.getBalance());
+		
+
 	}
 	
 	/*The withdraw method is one of the debit card activity */
-	public void deposit (double amount){		
+	//debit card object requires a lock when calling this method
+	public synchronized void deposit (double amount){		
 		balance = balance + amount;
+		System.out.println("Deposit complete successfully...");
+		notify();  //wakes up the thread that waiting on the object
 	}
 	
 	/*displayDetails() method prints the details of a DebitCard instance*/
