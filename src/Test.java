@@ -23,7 +23,6 @@ public class Test {
 		T1.start();  //this calls the start() method of Thread class
 		T2.start();
 	
-		**/
 		
 	
 
