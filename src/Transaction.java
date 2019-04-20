@@ -23,7 +23,7 @@ public class Transaction{
 		}
 	}
 
-	/*transation1 method is a sequence of withdraw activities
+	/*transation2 method is a sequence of withdraw activities
 	 * which used to form concurrent transactions with other thread*/
 	public void transaction2(){
 		try{
